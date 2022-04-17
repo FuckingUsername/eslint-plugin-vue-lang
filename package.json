@@ -1,0 +1,39 @@
+{
+  "name": "eslint-plugin-vue-lang",
+  "version": "1.0.0",
+  "description": "Allows ESLint configuration of Vue based on the lang attribute.",
+  "main": "lib/index.js",
+  "repository": "git@github.com:FuckingUsername/eslint-plugin-vue-lang.git",
+  "author": "hopsdance <yemen1120@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "prepare": "husky install"
+  },
+  "files": [
+    "lib"
+  ],
+  "homepage": "https://github.com/FuckingUsername/eslint-plugin-vue-lang",
+  "keywords": [
+    "eslint",
+    "eslint-plugin",
+    "vue",
+    "vue lang",
+    "typescript"
+  ],
+  "lint-staged": {
+    "*.{js,ts}": [
+      "eslint --fix"
+    ],
+    "!*.{js,ts}": "prettier --write --ignore-unknown"
+  },
+  "dependencies": {
+    "eslint-plugin-vue": "^8.6.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.13.0",
+    "eslint-define-config": "^1.3.0",
+    "husky": "^7.0.4",
+    "lint-staged": "^12.3.8",
+    "prettier": "^2.6.2"
+  }
+}
