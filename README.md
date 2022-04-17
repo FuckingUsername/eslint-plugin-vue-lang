@@ -50,7 +50,7 @@ module.exports = {
   overrides: [
     {
       // Add the `**/*.jsvue` pattern to handle Vue with JS lang.
-      files: ["**/*.js", "**/*.jsx", "**/*.jsvue"],
+      files: ["**/*.js?(x)", "**/*.jsvue "],
       parser: "vue-eslint-parser",
 
       // Specific configration for JS lang only.
@@ -59,9 +59,17 @@ module.exports = {
       },
       extends: [],
       rules: {},
+
+      // A parser needs to be specified to avoid exceptions due to passing the `vue-eslint-parser` plugin.
+      overrides: [
+        {
+          files: ["**/*.js?(x)"],
+          parser: "espree",
+        },
+      ],
     },
     {
-      files: ["**/*.ts", "**/*.tsx", "**/*.vue"],
+      files: ["**/*.ts?(x)", "**/*.vue"],
       parser: "vue-eslint-parser",
 
       // Specific configration for TS lang only.
@@ -72,6 +80,14 @@ module.exports = {
       },
       extends: [],
       rules: {},
+
+      // A parser needs to be specified to avoid exceptions due to passing the `vue-eslint-parser` plugin.
+      overrides: [
+        {
+          files: ["**/*.ts?(x)"],
+          parser: "@typescript-eslint/parser",
+        },
+      ],
     },
   ],
 };
