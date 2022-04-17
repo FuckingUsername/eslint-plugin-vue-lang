@@ -15,9 +15,9 @@ Because we are migrating from `JS` to `TS`, so we leave the `.vue` extension to 
 
 ## Table of Contents
 
-2. [Installation](#installation)
-3. [Configuration](#configuration)
-4. [License](#license)
+- [Installation](#installation)
+- [Configuration](#configuration)
+- [License](#license)
 
 ## <a name="installation"></a>Installation
 
