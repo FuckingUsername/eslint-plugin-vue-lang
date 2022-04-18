@@ -45,49 +45,27 @@ module.exports = {
      * Use the `eslint-plugin-vue-lang` plugin instead of
      * the `eslint-plugin-vue` plugin.
      */
-    "vue-lang",
+    'vue-lang',
   ],
   overrides: [
     {
       // Add the `**/*.jsvue` pattern to handle Vue with JS lang.
-      files: ["**/*.js?(x)", "**/*.jsvue "],
-      parser: "vue-eslint-parser",
+      files: ['**/*.jsvue'],
+      parser: 'vue-eslint-parser',
 
       // Specific configration for JS lang only.
-      parserOptions: {
-        parser: "espree",
+      rules: {
+        'rule-for-js-only': 'error',
       },
-      extends: [],
-      rules: {},
-
-      // A parser needs to be specified to avoid exceptions due to passing the `vue-eslint-parser` plugin.
-      overrides: [
-        {
-          files: ["**/*.js?(x)"],
-          parser: "espree",
-        },
-      ],
     },
     {
-      files: ["**/*.ts?(x)", "**/*.vue"],
-      parser: "vue-eslint-parser",
+      files: ['**/*.vue'],
+      parser: 'vue-eslint-parser',
 
       // Specific configration for TS lang only.
-      parserOptions: {
-        parser: "@typescript-eslint/parser",
-        project: "./tsconfig.json",
-        extraFileExtensions: [".vue"],
+      rules: {
+        'rule-for-ts-only': 'error',
       },
-      extends: [],
-      rules: {},
-
-      // A parser needs to be specified to avoid exceptions due to passing the `vue-eslint-parser` plugin.
-      overrides: [
-        {
-          files: ["**/*.ts?(x)"],
-          parser: "@typescript-eslint/parser",
-        },
-      ],
     },
   ],
 };
