@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-vue-lang",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Allows ESLint configuration of Vue based on the lang attribute.",
   "main": "lib/index.js",
   "repository": "git@github.com:FuckingUsername/eslint-plugin-vue-lang.git",
